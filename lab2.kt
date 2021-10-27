@@ -1,6 +1,17 @@
+import java.util.*
+
+
 open class Person(var name: String, var birthYear: Int) {
-    var age: Int = 2021 - birthYear
+
+    var age: Int = thisYear() - birthYear
 }
+
+fun thisYear(): Int {
+    var calendar = Calendar.getInstance()
+    var year = calendar[Calendar.YEAR]
+    return year
+}
+
 
 class Student(
     name_s: String, birthYear_s: Int,
